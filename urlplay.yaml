@@ -5,5 +5,5 @@
   tasks:
     - set_fact:
         response: "{{ json_response.content | urlsubstr }}"
-    - debug:..
+    - debug:
         var: response
