@@ -1,0 +1,9 @@
+- hosts: localhost
+  vars:
+    json_response: "{{ lookup('file', 'response.json') | from_json }}"
+
+  tasks:
+    - set_fact:
+        response: "{{ json_response.content | urlsubstr }}"
+    - debug:..
+        var: response
